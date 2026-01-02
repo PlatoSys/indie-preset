@@ -84,7 +84,7 @@ export const bundleProducts: Product[] = [
     price: '$39.95 CAD',
     mediaBg: '#f2d8dd',
     imageSrc: getImage('bundle_4.webp'),
-    underlineTitle: true,
+    underlineTitle: false,
   },
 ];
 
@@ -138,7 +138,7 @@ export const categoryTiles: CategoryTile[] = [
 export const quoteBlock: QuoteBlock = {
   quote: '"This spicy, pocket-sized booster is the healthy kickstart I need to start my day."',
   author: '— JANE S.',
-  imageSrc: getImage('bottle_1.webp'),
+  imageSrc: getImage('hero_2.webp'),
 };
 
 export const promoBlock: PromoBlock = {
@@ -150,13 +150,13 @@ export const promoBlock: PromoBlock = {
 };
 
 export const hero: Hero = {
-  imageSrc: getImage('hero_2.webp'),
+  imageSrc: getImage('leaf_1.webp'),
   titleLines: ['Drinks that taste as', 'good as they make', 'you feel.'],
 };
 
 export const pdp: ProductDetail = {
   title: 'Fiery Ginger Booster',
-  imageSrc: getImage('bottle_1.webp'),
+  imageSrc: getImage('hero_3.webp'),
   mediaBg: '#f2c54f',
   variants: [
     { id: 'v1', label: '60 mL', price: '$3.95 CAD' },

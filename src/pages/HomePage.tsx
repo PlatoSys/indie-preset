@@ -77,21 +77,23 @@ export function HomePage() {
         {/* Quote Block */}
         <section className="section" style={{ paddingTop: 0 }}>
           <div className="container">
-            <SplitFrame
-              left={
-                <>
-                  <p className="quote">{quoteBlock.quote}</p>
-                  <p className="quoteAuthor">{quoteBlock.author}</p>
-                </>
-              }
-              right={
-                <div className="frameMedia" style={{ '--media-bg': '#f2dcc6' } as CSSProperties}>
-                  <img src={quoteBlock.imageSrc} alt="" />
-                </div>
-              }
-              leftPadded
-              rightPadded={false}
-            />
+            <div className="quoteBlockFrame">
+              <SplitFrame
+                left={
+                  <>
+                    <p className="quote">{quoteBlock.quote}</p>
+                    <p className="quoteAuthor">{quoteBlock.author}</p>
+                  </>
+                }
+                right={
+                  <div className="frameMedia" style={{ '--media-bg': '#f2dcc6' } as CSSProperties}>
+                    <img src={quoteBlock.imageSrc} alt="" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  </div>
+                }
+                leftPadded
+                rightPadded={false}
+              />
+            </div>
           </div>
         </section>
 
@@ -104,8 +106,8 @@ export function HomePage() {
         <section className="section">
           <KeepingItGreen
             title="Keeping it green"
-            leftImage={{ src: `${import.meta.env.BASE_URL}img/hero_3.webp`, alt: 'Sustainable practices' }}
-            rightImage={{ src: `${import.meta.env.BASE_URL}img/hero_4.webp`, alt: 'Eco-friendly products' }}
+            leftImage={{ src: `${import.meta.env.BASE_URL}img/hero_4.webp`, alt: 'Sustainable practices' }}
+            rightImage={{ src: `${import.meta.env.BASE_URL}img/hero_5.webp`, alt: 'Eco-friendly products' }}
           />
         </section>
 
@@ -113,7 +115,7 @@ export function HomePage() {
         <section className="section">
           <div className="container">
             <SectionTitle>Bundle up and save</SectionTitle>
-            <ProductGrid items={bundleProducts} />
+            <ProductGrid items={bundleProducts} className="productGrid--bundle" />
           </div>
         </section>
       </main>

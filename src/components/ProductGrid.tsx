@@ -41,11 +41,12 @@ function ProductCard({ item }: ProductCardProps) {
 
 interface ProductGridProps {
   items: ProductItem[];
+  className?: string;
 }
 
-export function ProductGrid({ items }: ProductGridProps) {
+export function ProductGrid({ items, className }: ProductGridProps) {
   return (
-    <div className="productGrid">
+    <div className={className ? `productGrid ${className}` : 'productGrid'}>
       {items.map((item) => (
         <ProductCard key={item.id || item.title} item={item} />
       ))}
