@@ -1,4 +1,4 @@
-import type{ CSSProperties } from 'react';
+import type { CSSProperties } from "react";
 
 interface ProductItem {
   id?: string;
@@ -18,7 +18,10 @@ interface ProductCardProps {
 function ProductCard({ item }: ProductCardProps) {
   return (
     <div className="productCard">
-      <div className="productMedia" style={{ '--media-bg': item.mediaBg } as CSSProperties}>
+      <div
+        className="productMedia"
+        style={{ "--media-bg": item.mediaBg } as CSSProperties}
+      >
         {item.imageSrc ? (
           <img src={item.imageSrc} alt={item.imageAlt || item.title} />
         ) : (
@@ -29,7 +32,10 @@ function ProductCard({ item }: ProductCardProps) {
       </div>
 
       <div className="productTitle">
-        <a className={item.underlineTitle ? 'linkUnderline' : undefined} href={item.href || '#'}>
+        <a
+          className={item.underlineTitle ? "linkUnderline" : undefined}
+          href={item.href || "#"}
+        >
           {item.title}
         </a>
       </div>
@@ -46,11 +52,10 @@ interface ProductGridProps {
 
 export function ProductGrid({ items, className }: ProductGridProps) {
   return (
-    <div className={className ? `productGrid ${className}` : 'productGrid'}>
+    <div className={className ? `productGrid ${className}` : "productGrid"}>
       {items.map((item) => (
         <ProductCard key={item.id || item.title} item={item} />
       ))}
     </div>
   );
 }
-

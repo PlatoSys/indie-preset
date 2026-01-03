@@ -1,4 +1,3 @@
-
 interface CategoryNavItem {
   label: string;
   href?: string;
@@ -13,7 +12,7 @@ export function CategoryNavBar({ items }: CategoryNavBarProps) {
     <div className="container">
       <div className="categoryNav" aria-label="Category navigation">
         {items.map((item) => (
-          <a key={item.label} href={item.href || '#'}>
+          <a key={item.label} href={item.href || "#"}>
             {item.label} →
           </a>
         ))}
@@ -21,4 +20,3 @@ export function CategoryNavBar({ items }: CategoryNavBarProps) {
     </div>
   );
 }
-

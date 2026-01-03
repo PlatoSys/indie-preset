@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import type { CSSProperties } from "react";
 
 interface CategoryTile {
   label: string;
@@ -16,9 +16,14 @@ export function CategoryTiles({ items }: CategoryTilesProps) {
   return (
     <div className="tiles">
       {items.map((item) => (
-        <a key={item.label} href={item.href || '#'} aria-label={item.label}>
-          <div className="tileMedia" style={{ '--media-bg': item.mediaBg } as CSSProperties}>
-            {item.imageSrc ? <img src={item.imageSrc} alt={item.imageAlt || ''} /> : null}
+        <a key={item.label} href={item.href || "#"} aria-label={item.label}>
+          <div
+            className="tileMedia"
+            style={{ "--media-bg": item.mediaBg } as CSSProperties}
+          >
+            {item.imageSrc ? (
+              <img src={item.imageSrc} alt={item.imageAlt || ""} />
+            ) : null}
           </div>
           <p className="tileLabel">{item.label} →</p>
         </a>
@@ -26,4 +31,3 @@ export function CategoryTiles({ items }: CategoryTilesProps) {
     </div>
   );
 }
-

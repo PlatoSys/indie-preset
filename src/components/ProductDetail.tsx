@@ -24,14 +24,14 @@ interface ProductDetailProps {
 export function ProductDetail({ product }: ProductDetailProps) {
   const variants = useMemo(
     () => (product?.variants?.length ? product.variants : []),
-    [product]
+    [product],
   );
   const [activeVariant, setActiveVariant] = useState(variants[0]?.id || "v1");
   const [qty, setQty] = useState(1);
 
   const active = useMemo(
     () => variants.find((v) => v.id === activeVariant) || variants[0],
-    [activeVariant, variants]
+    [activeVariant, variants],
   );
 
   return (

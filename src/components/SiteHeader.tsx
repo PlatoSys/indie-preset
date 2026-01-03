@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { BagIcon, ChevronDownIcon, ChevronUpIcon, SearchIcon } from './icons';
+import React, { useState, useRef, useEffect } from "react";
+import { BagIcon, ChevronDownIcon, ChevronUpIcon, SearchIcon } from "./icons";
 
 interface NavItem {
   label: string;
@@ -9,20 +9,25 @@ interface NavItem {
 }
 
 const drinksDropdownItems = [
-  'Shop all',
-  'Cold-pressed Juices',
-  'Boosters',
-  'Kombuchas',
-  'Plant Milks',
-  'Shakes',
-  'Lemonades',
+  "Shop all",
+  "Cold-pressed Juices",
+  "Boosters",
+  "Kombuchas",
+  "Plant Milks",
+  "Shakes",
+  "Lemonades",
 ];
 
 const navItems: NavItem[] = [
-  { label: 'Drinks', hasDropdown: true, href: '#', dropdownItems: drinksDropdownItems },
-  { label: 'Bundles', hasDropdown: false, href: '#' },
-  { label: 'Recipes', hasDropdown: false, href: '#' },
-  { label: 'About', hasDropdown: true, href: '#' },
+  {
+    label: "Drinks",
+    hasDropdown: true,
+    href: "#",
+    dropdownItems: drinksDropdownItems,
+  },
+  { label: "Bundles", hasDropdown: false, href: "#" },
+  { label: "Recipes", hasDropdown: false, href: "#" },
+  { label: "About", hasDropdown: true, href: "#" },
 ];
 
 export function SiteHeader() {
@@ -31,21 +36,27 @@ export function SiteHeader() {
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setOpenDropdown(null);
       }
     }
 
     if (openDropdown) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [openDropdown]);
 
-  const handleNavItemClick = (e: React.MouseEvent<HTMLAnchorElement>, item: NavItem) => {
+  const handleNavItemClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    item: NavItem,
+  ) => {
     if (item.hasDropdown) {
       e.preventDefault();
       setOpenDropdown(openDropdown === item.label ? null : item.label);
@@ -61,9 +72,13 @@ export function SiteHeader() {
 
         <nav className="nav" aria-label="Primary">
           {navItems.map((item) => (
-            <div key={item.label} className="navItemWrapper" ref={item.label === 'Drinks' ? dropdownRef : null}>
+            <div
+              key={item.label}
+              className="navItemWrapper"
+              ref={item.label === "Drinks" ? dropdownRef : null}
+            >
               <a
-                className={`navItem ${openDropdown === item.label ? 'isActive' : ''}`}
+                className={`navItem ${openDropdown === item.label ? "isActive" : ""}`}
                 href={item.href}
                 onClick={(e) => handleNavItemClick(e, item)}
               >
@@ -76,15 +91,17 @@ export function SiteHeader() {
                   )
                 ) : null}
               </a>
-              {item.hasDropdown && openDropdown === item.label && item.dropdownItems && (
-                <div className="dropdownMenu">
-                  {item.dropdownItems.map((dropdownItem) => (
-                    <a key={dropdownItem} href="#" className="dropdownItem">
-                      {dropdownItem}
-                    </a>
-                  ))}
-                </div>
-              )}
+              {item.hasDropdown &&
+                openDropdown === item.label &&
+                item.dropdownItems && (
+                  <div className="dropdownMenu">
+                    {item.dropdownItems.map((dropdownItem) => (
+                      <a key={dropdownItem} href="#" className="dropdownItem">
+                        {dropdownItem}
+                      </a>
+                    ))}
+                  </div>
+                )}
             </div>
           ))}
         </nav>
@@ -101,4 +118,3 @@ export function SiteHeader() {
     </header>
   );
 }
-

@@ -1,4 +1,4 @@
-import { Fragment, type CSSProperties } from 'react';
+import { Fragment, type CSSProperties } from "react";
 
 interface HeroBannerProps {
   imageSrc?: string;
@@ -6,11 +6,18 @@ interface HeroBannerProps {
   titleLines?: string[];
 }
 
-export function HeroBanner({ imageSrc, imageAlt, titleLines = [] }: HeroBannerProps) {
+export function HeroBanner({
+  imageSrc,
+  imageAlt,
+  titleLines = [],
+}: HeroBannerProps) {
   return (
     <div className="container">
-      <div className="hero" style={{ '--media-bg': '#0b0d12' } as CSSProperties}>
-        {imageSrc ? <img src={imageSrc} alt={imageAlt || ''} /> : null}
+      <div
+        className="hero"
+        style={{ "--media-bg": "#0b0d12" } as CSSProperties}
+      >
+        {imageSrc ? <img src={imageSrc} alt={imageAlt || ""} /> : null}
         <div className="heroOverlay">
           <h2>
             {titleLines.length ? (
@@ -35,4 +42,3 @@ export function HeroBanner({ imageSrc, imageAlt, titleLines = [] }: HeroBannerPr
     </div>
   );
 }
-

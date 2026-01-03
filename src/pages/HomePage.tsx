@@ -1,13 +1,13 @@
-import { type CSSProperties } from 'react';
-import { CategoryTiles } from '../components/CategoryTiles';
-import { Footer } from '../components/Footer';
-import { HeroBanner } from '../components/HeroBanner';
-import { KeepingItGreen } from '../components/KeepingItGreen';
-import { ProductDetail } from '../components/ProductDetail';
-import { ProductGrid } from '../components/ProductGrid';
-import { SectionTitle } from '../components/SectionTitle';
-import { SiteHeader } from '../components/SiteHeader';
-import { SplitFrame } from '../components/SplitFrame';
+import { type CSSProperties } from "react";
+import { CategoryTiles } from "../components/CategoryTiles";
+import { Footer } from "../components/Footer";
+import { HeroBanner } from "../components/HeroBanner";
+import { KeepingItGreen } from "../components/KeepingItGreen";
+import { ProductDetail } from "../components/ProductDetail";
+import { ProductGrid } from "../components/ProductGrid";
+import { SectionTitle } from "../components/SectionTitle";
+import { SiteHeader } from "../components/SiteHeader";
+import { SplitFrame } from "../components/SplitFrame";
 import {
   bundleProducts,
   categoryTiles,
@@ -16,7 +16,7 @@ import {
   pdp,
   promoBlock,
   quoteBlock,
-} from './homeContent';
+} from "./homeContent";
 
 export function HomePage() {
   return (
@@ -29,20 +29,33 @@ export function HomePage() {
           <div className="container">
             <SplitFrame
               left={
-                <div className="frameMedia" style={{ '--media-bg': '#dbeaf2' } as CSSProperties}>
+                <div
+                  className="frameMedia"
+                  style={{ "--media-bg": "#dbeaf2" } as CSSProperties}
+                >
                   <img src={promoBlock.imageSrc} alt="" />
                 </div>
               }
               right={
                 <div>
-                  <div className="quote" style={{ fontSize: '56px', marginBottom: 16, marginTop: 0 }}>
+                  <div
+                    className="quote"
+                    style={{ fontSize: "56px", marginBottom: 16, marginTop: 0 }}
+                  >
                     {promoBlock.title}
                   </div>
-                  <div className="mono muted" style={{ letterSpacing: '0.08em', lineHeight: 1.9 }}>
+                  <div
+                    className="mono muted"
+                    style={{ letterSpacing: "0.08em", lineHeight: 1.9 }}
+                  >
                     {promoBlock.body}
                   </div>
                   <div style={{ marginTop: 26 }}>
-                    <button className="btnSecondary" type="button" style={{ width: 260 }}>
+                    <button
+                      className="btnSecondary"
+                      type="button"
+                      style={{ width: 260 }}
+                    >
                       {promoBlock.cta}
                     </button>
                   </div>
@@ -86,8 +99,19 @@ export function HomePage() {
                   </>
                 }
                 right={
-                  <div className="frameMedia" style={{ '--media-bg': '#f2dcc6' } as CSSProperties}>
-                    <img src={quoteBlock.imageSrc} alt="" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  <div
+                    className="frameMedia"
+                    style={{ "--media-bg": "#f2dcc6" } as CSSProperties}
+                  >
+                    <img
+                      src={quoteBlock.imageSrc}
+                      alt=""
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                      }}
+                    />
                   </div>
                 }
                 leftPadded
@@ -106,8 +130,14 @@ export function HomePage() {
         <section className="section">
           <KeepingItGreen
             title="Keeping it green"
-            leftImage={{ src: `${import.meta.env.BASE_URL}img/hero_4.webp`, alt: 'Sustainable practices' }}
-            rightImage={{ src: `${import.meta.env.BASE_URL}img/hero_5.webp`, alt: 'Eco-friendly products' }}
+            leftImage={{
+              src: `${import.meta.env.BASE_URL}img/hero_4.webp`,
+              alt: "Sustainable practices",
+            }}
+            rightImage={{
+              src: `${import.meta.env.BASE_URL}img/hero_5.webp`,
+              alt: "Eco-friendly products",
+            }}
           />
         </section>
 
@@ -115,7 +145,10 @@ export function HomePage() {
         <section className="section">
           <div className="container">
             <SectionTitle>Bundle up and save</SectionTitle>
-            <ProductGrid items={bundleProducts} className="productGrid--bundle" />
+            <ProductGrid
+              items={bundleProducts}
+              className="productGrid--bundle"
+            />
           </div>
         </section>
       </main>
@@ -124,4 +157,3 @@ export function HomePage() {
     </>
   );
 }
-

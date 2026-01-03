@@ -1,4 +1,3 @@
-
 interface SocialIconProps {
   label: string;
 }
@@ -28,7 +27,10 @@ export function Footer() {
 
           <div>
             <h4>Our mission</h4>
-            <div className="mono" style={{ lineHeight: 1.9, letterSpacing: '0.08em' }}>
+            <div
+              className="mono"
+              style={{ lineHeight: 1.9, letterSpacing: "0.08em" }}
+            >
               We offer sustainable access to delicious
               <br />
               plant-based nutrition.
@@ -45,8 +47,18 @@ export function Footer() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', justifyItems: 'end', alignContent: 'start', gap: 12 }}>
-            <div className="brand" style={{ borderColor: 'rgba(255,255,255,0.8)', color: 'white' }}>
+          <div
+            style={{
+              display: "grid",
+              justifyItems: "end",
+              alignContent: "start",
+              gap: 12,
+            }}
+          >
+            <div
+              className="brand"
+              style={{ borderColor: "rgba(255,255,255,0.8)", color: "white" }}
+            >
               taste
             </div>
             <div className="socialRow" aria-label="Social links">
@@ -59,9 +71,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="footerBottom">© {new Date().getFullYear()}, indie-preset</div>
+        <div className="footerBottom">
+          © {new Date().getFullYear()}, indie-preset
+        </div>
       </div>
     </footer>
   );
 }
-
