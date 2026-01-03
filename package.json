@@ -1,5 +1,6 @@
 {
   "name": "indie-preset",
+  "homepage": "https://platosys.github.io/indie-preset",
   "private": true,
   "version": "0.0.0",
   "type": "module",
