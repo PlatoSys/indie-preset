@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface IconProps {
   size?: number;
 }
@@ -14,7 +12,12 @@ export function ChevronDownIcon({ size = 16 }: IconProps) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path
+        d="M6 9l6 6 6-6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
@@ -29,7 +32,12 @@ export function ChevronUpIcon({ size = 16 }: IconProps) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <path d="M18 15l-6-6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path
+        d="M18 15l-6-6-6 6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
@@ -49,7 +57,12 @@ export function SearchIcon({ size = 20 }: IconProps) {
         stroke="currentColor"
         strokeWidth="2"
       />
-      <path d="M16.5 16.5 21 21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path
+        d="M16.5 16.5 21 21"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
@@ -90,9 +103,18 @@ export function ArrowRightIcon({ size = 20 }: IconProps) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <path d="M4 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <path d="M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path
+        d="M4 12h14"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+      <path
+        d="M13 6l6 6-6 6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
-
