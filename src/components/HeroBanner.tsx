@@ -1,4 +1,4 @@
-import { Fragment, CSSProperties } from 'react';
+import { Fragment, type CSSProperties } from 'react';
 
 interface HeroBannerProps {
   imageSrc?: string;

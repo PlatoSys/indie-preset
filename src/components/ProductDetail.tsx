@@ -1,5 +1,5 @@
-import { useMemo, useState, CSSProperties } from 'react';
-import { ArrowRightIcon } from './icons';
+import { useMemo, useState, type CSSProperties } from "react";
+import { ArrowRightIcon } from "./icons";
 
 interface ProductVariant {
   id: string;
@@ -22,25 +22,39 @@ interface ProductDetailProps {
 }
 
 export function ProductDetail({ product }: ProductDetailProps) {
-  const variants = product?.variants?.length ? product.variants : [];
-  const [activeVariant, setActiveVariant] = useState(variants[0]?.id || 'v1');
+  const variants = useMemo(
+    () => (product?.variants?.length ? product.variants : []),
+    [product]
+  );
+  const [activeVariant, setActiveVariant] = useState(variants[0]?.id || "v1");
   const [qty, setQty] = useState(1);
 
-  const active = useMemo(() => variants.find((v) => v.id === activeVariant) || variants[0], [
-    activeVariant,
-    variants,
-  ]);
+  const active = useMemo(
+    () => variants.find((v) => v.id === activeVariant) || variants[0],
+    [activeVariant, variants]
+  );
 
   return (
     <div className="container">
       <div className="pdp">
-        <div className="frameMedia" style={{ '--media-bg': product?.mediaBg || '#f3f4f6' } as CSSProperties}>
-          {product?.imageSrc ? <img src={product.imageSrc} alt={product.imageAlt || ''} /> : null}
+        <div
+          className="frameMedia"
+          style={
+            { "--media-bg": product?.mediaBg || "#f3f4f6" } as CSSProperties
+          }
+        >
+          {product?.imageSrc ? (
+            <img src={product.imageSrc} alt={product.imageAlt || ""} />
+          ) : null}
         </div>
 
         <div>
-          <h1 className="pdpTitle">{product?.title || 'Fiery Ginger Booster'}</h1>
-          <p className="pdpPrice">{active?.price || product?.price || '$3.95 CAD'}</p>
+          <h1 className="pdpTitle">
+            {product?.title || "Fiery Ginger Booster"}
+          </h1>
+          <p className="pdpPrice">
+            {active?.price || product?.price || "$3.95 CAD"}
+          </p>
 
           <div className="mono muted">Size</div>
           <div className="pillRow" role="tablist" aria-label="Variant selector">
@@ -48,7 +62,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
               <button
                 key={v.id}
                 type="button"
-                className={`pill ${v.id === activeVariant ? 'isActive' : ''}`}
+                className={`pill ${v.id === activeVariant ? "isActive" : ""}`}
                 onClick={() => setActiveVariant(v.id)}
               >
                 {v.label}
@@ -66,7 +80,11 @@ export function ProductDetail({ product }: ProductDetailProps) {
               –
             </button>
             <div aria-label="Selected quantity">{qty}</div>
-            <button type="button" aria-label="Increase quantity" onClick={() => setQty((q) => q + 1)}>
+            <button
+              type="button"
+              aria-label="Increase quantity"
+              onClick={() => setQty((q) => q + 1)}
+            >
               +
             </button>
           </div>
@@ -78,7 +96,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
             Buy it now
           </button>
 
-          <a className="subLink" href={product?.detailsHref || '#'}>
+          <a className="subLink" href={product?.detailsHref || "#"}>
             View full details <ArrowRightIcon size={18} />
           </a>
         </div>
@@ -86,4 +104,3 @@ export function ProductDetail({ product }: ProductDetailProps) {
     </div>
   );
 }
-
